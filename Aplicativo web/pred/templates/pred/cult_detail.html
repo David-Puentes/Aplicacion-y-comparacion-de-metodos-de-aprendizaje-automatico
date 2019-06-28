@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+      <title>ML-OPALO</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href={% static "css/pred.css" %}>
+      <link href="//fonts.googleapis.com/css?family=Mali&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+          <h1><a href="/">Aplicación de aprendizaje automático en agricultura</a></h1>
+        </div>
+
+        <div class ="content container">
+          <div class ="row">
+            <div class="col-md-10">
+
+              {% for cult in cults %}
+
+              <table style="width:100%">
+                <tr>
+                  <th> Variedad </th>
+                  <th> Fertilización </th>
+                  <th> Exposición </th>
+                </tr>
+                <tr>
+                  <td>{{cult.Variedad}}</td>
+                  <td>{{cult.Fert}}</td>
+                  <td>{{cult.Expo}}</td>
+                </tr>
+              </table>
+
+              <h1 style="color:SeaGreen;"> Clima </h1>
+              <h3 align="justify"> {{cult.Clima}} </h3>
+
+              <h1> Suelo </h1>
+              <h2 align="justify"> {{cult.Suelo}} </h2>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

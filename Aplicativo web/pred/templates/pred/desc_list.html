@@ -1,0 +1,11 @@
+{% extends "pred/base.html" %}
+
+{% block content %}
+        {% for post in posts %}
+          <div class = "post">
+            <h2>{{ post.Titulo }}</h2>
+          </div>
+          <p p align="justify">{{post.Texto}}<p>
+        {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+    <head>
+      <title>ML-OPALO</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href={% static "css/pred.css" %}>
+      <link href="//fonts.googleapis.com/css?family=Mali&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+          <a href="{% url 'datos_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          <h1><a href="/">Aplicación de aprendizaje automático en agricultura</a></h1>
+        </div>
+
+        <div class ="content container">
+          <div class ="row">
+            <div class="col-md-8">
+
+              {% for dato in datos %}
+                <div class = "post">
+                  <h2><a href = {% url "dato_detail" pk=dato.pk %}>{{dato.Titulo}}</a></h2>
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

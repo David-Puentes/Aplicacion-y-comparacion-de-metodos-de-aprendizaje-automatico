@@ -1,0 +1,21 @@
+{% extends "pred/base.html" %}
+
+{% block content %}
+
+        <div class = "post">
+          <h2><a href = {% url "datos_nuevo" %}>{{Descrip}}</a></h2>
+        </div>
+
+        <div class = "post">
+          <h2><a href = {% url "vars_nuevo" %}>{{Vars}}</a></h2>
+        </div>
+
+        <div class = "post">
+          <h2><a href = {% url "predicciones" %}>{{Predict}}</a></h2>
+        </div>
+
+        <div class = "OPALO">
+          <h2><a href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio">OPALO</a></h2>
+          <p>Grupo de optimización de procesos logísticos, productivos y administrativos</p>
+        </div>
+{% endblock %}
