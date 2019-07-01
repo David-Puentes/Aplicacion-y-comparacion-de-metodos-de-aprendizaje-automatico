@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #B9C5F4;
+    background-color: #000000;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -8,6 +8,10 @@
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+}
+
+body {
+  background: white url("images/background.jpg" no-repeat)
 }
 
 .content {
@@ -34,7 +38,7 @@ h1, h2, h3, h4 {
 }
 
 .post {
-    color: #000000;
+    color: #021A2E;
     margin-bottom: 40px;
     margin-top: 40px;
     padding-left: 15px;

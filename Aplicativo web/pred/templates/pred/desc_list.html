@@ -1,11 +1,30 @@
-{% extends "pred/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<title>ML-OPALO</title>
 
-{% block content %}
-        {% for post in posts %}
-          <div class = "post">
-            <h2>{{ post.Titulo }}</h2>
-          </div>
-          <p p align="justify">{{post.Texto}}<p>
-        {% endfor %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+<body>
 
-{% endblock %}
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <a href={% url "post_list" %} class="text-decoration-none">Inicio</a>
+  </div>
+  <div class="w3-display-middle">
+    {% for post in posts %}
+    <h1 class="w3-jumbo w3-animate-top">{{post.Titulo}}</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-justify">{{post.Texto}}</p>
+    {% endfor %}
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    Grupo <a href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio">OPALO</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+.page-header {
+    background-color: #021A2E;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif
+}
+
+.w3-display-topmiddle{position:absolute;left:50%;top:50;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+a {
+  text-decoration: none;
+}
+
+.bgimg {
+    background-image: url('body.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  align: center;
+  margin-top: 40px;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #014B8B;
+  color: white;
+}
+
+.button2 {
+  background-color: #008CBA;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}

@@ -4,21 +4,30 @@
       <title>ML-OPALO</title>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link rel="stylesheet" href={% static "css/pred.css" %}>
-      <link href="//fonts.googleapis.com/css?family=Mali&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+      <link rel="stylesheet" href="{% static 'css/test.css' %}">
     </head>
     <body>
-        <div class="page-header">
-          <h1><a href="/">Aplicación de aprendizaje automático en agricultura</a></h1>
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          <a href={% url "post_list" %} class="text-decoration-none">Inicio</a>
         </div>
+
+        <div class="w3-display-topmiddle">
+          <h1 class="w3-jumbo w3-animate-top display-3" align = "center">Descripción de variables</h1>
+          <hr class="w3-border-grey" style="margin:auto;width:100%">
 
         <div class ="content container">
           <div class ="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
 
               {% for cult in cults %}
 
-              <table style="width:100%">
+              <table align = "center">
                 <tr>
                   <th> Variedad </th>
                   <th> Fertilización </th>
@@ -31,13 +40,15 @@
                 </tr>
               </table>
 
-              <h1 style="color:SeaGreen;"> Clima </h1>
-              <h3 align="justify"> {{cult.Clima}} </h3>
+              <h1> Clima </h1>
+              <h4 align="justify"> {{cult.Clima}} </h4>
 
               <h1> Suelo </h1>
-              <h2 align="justify"> {{cult.Suelo}} </h2>
+              <h4 align="justify"> {{cult.Suelo}} </h4>
 
               {% endfor %}
+            </div>
+            </div>
             </div>
           </div>
         </div>

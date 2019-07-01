@@ -1,9 +1,51 @@
-{% extends 'pred/base.html' %}
+{% load static %}
+<html>
+    <head>
+      <title>ML-OPALO</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+      <link rel="stylesheet" href="{% static 'css/test.css' %}">
 
-{% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-{% endblock %}
+      <style>
+      input[type=text] {
+          color: #021A2E;
+          width:100%;
+          padding: 12px 20px;          
+          margin-top:0px;
+        }
+
+      input[type=number] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        color: #021A2E;
+      }
+      </style>
+
+    </head>
+
+    <body>
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          <a href={% url "post_list" %} class="text-decoration-none">Inicio</a>
+        </div>
+
+        <div class="w3-display-topmiddle">
+          <h1 class="w3-jumbo w3-animate-top display-3" align = "center">Nueva Predicción</h1>
+          <hr class="w3-border-grey" style="margin:auto;width:100%">
+
+          <form method="POST" class="post-form">{% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="save btn btn-default">Guardar</button>
+          </form>
+          </div>
+      </div>
+  </body>
+</html>
