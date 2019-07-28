@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Crear modelo para descripción
 class Desc(models.Model):
@@ -24,9 +25,9 @@ class Cult(models.Model):
 
 class Datos(models.Model):
     Titulo = models.CharField(max_length=200)
-    P_accu = models.DecimalField(max_digits=6, decimal_places=2)
-    T_avg_prev = models.DecimalField(max_digits=6, decimal_places=2)
-    Rad_accu_prev1 = models.DecimalField(max_digits=6, decimal_places=2)
+    P_accu = models.DecimalField(max_digits=6, decimal_places=2, help_text="Valores entre 17.9 - 348.6 [mms]")
+    T_avg_prev = models.DecimalField(max_digits=6, decimal_places=2, help_text="Valores entre 22.74 - 27.81 [C]")
+    Rad_accu_prev1 = models.DecimalField(max_digits=6, decimal_places=2, help_text="Valores entre 109.5 - 524.3 [µmol·m²s-1]")
 
     def __str__(self):
         return self.Titulo

@@ -1,42 +1,45 @@
+
 {% load static %}
 <html>
-    <head>
-      <title>ML-OPALO</title>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-      <link rel="stylesheet" href="{% static 'css/test.css' %}">
-    </head>
-    <body>
-      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-        <div class="w3-display-topleft w3-padding-large w3-xlarge">
-          <a href={% url "post_list" %} class="text-decoration-none">Inicio</a>
+<head>
+  <title>ML-OPALO</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="{% static 'css/test.css' %}">
+</head>
+<body>
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+      <a href={% url "post_list" %} class="text-decoration-none">Inicio</a>
+    </div>
+
+    <div class="w3-display-topmiddle">
+      <h1 class="w3-jumbo w3-animate-top display-3" align = "center">Predicciones</h1>
+      <hr class="w3-border-grey" style="margin:auto;width:100%">
+
+    <div class ="content container">
+      <div class ="row">
+        <div class="col-md-8">
+
+          {% for dato in datos %}
+              <ul class = "list-group">
+                <h2><li><span class="glyphicon glyphicon-align-left glyphicon-tree-deciduous" aria-hidden="true"></span>
+                  <a href = {% url "dato_detail" pk=dato.pk %} data-toggle="tooltip" title="Detalles de la predicción">{{dato.Titulo}}</a></li><h2>
+              </ul>
+          {% endfor %}
+          <a href="{% url 'datos_new' %}" class="top-menu" data-toggle="tooltip" title="Realizar una nueva predicción"> Nueva predicción</span></a>
         </div>
-
-        <div class="w3-display-topmiddle">
-          <h1 class="w3-jumbo w3-animate-top display-3" align = "center">Predicciones</h1>
-          <hr class="w3-border-grey" style="margin:auto;width:100%">
-
-        <div class ="content container">
-          <div class ="row">
-            <div class="col-md-8">
-
-              {% for dato in datos %}
-                <div class = "post">
-                  <ul class = "list-group">
-                    <h2><li class="list-group-item list-group-item-info">
-                      <a href = {% url "dato_detail" pk=dato.pk %}>{{dato.Titulo}}</a></li><h2>
-                  </ul>
-                </div>
-              {% endfor %}
-              <a href="{% url 'datos_new' %}" class="top-menu"> Nueva predicción</span></a>
-            </div>
-            </div>
-          </div>
         </div>
-    </body>
+      </div>
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+      Grupo <a href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio">OPALO</a>
+    </div>
+  </div>
+</body>
 </html>

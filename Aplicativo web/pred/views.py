@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Desc, Cult, Datos
 from .forms import DataForm
 import pickle
+import numpy as np
 from sklearn import ensemble
 
 # Vista para la página principal
@@ -30,7 +31,7 @@ def pred_list(request):
 def dato_detail(request,pk):
     dato = get_object_or_404(Datos,pk=pk)
     predict_model = pickle.load(open("Modelo final.sav","rb"))
-    predict = predict_model.predict([[dato.P_accu,dato.T_avg_prev,dato.Rad_accu_prev1]])
+    predict = np.round(predict_model.predict([[dato.P_accu,dato.T_avg_prev,dato.Rad_accu_prev1]]),3)
     return render(request,"pred/ML.html", {"dato": dato,"predict":predict})
 
 # Formulario para ingresar información
@@ -42,5 +43,5 @@ def datos_new(request):
             post.save()
             return redirect("dato_detail",pk=post.pk)
     else:
-        form = DataForm()
+        form = DataForm(initial={"P_accu":0,"T_avg_prev":0,"Rad_accu_prev1":0})
     return render(request, "pred/data_edit.html",{"form":form})

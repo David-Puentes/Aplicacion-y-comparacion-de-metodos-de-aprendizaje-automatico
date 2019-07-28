@@ -4,28 +4,43 @@
       <title>ML-OPALO</title>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-      <link href="//fonts.googleapis.com/css?family=Mali&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="{% static 'css/pruebas.css' %}">
     </head>
     <body>
-        <div class="page-header">
-          <h1><a href="/">Aplicación de aprendizaje automático en agricultura</a></h1>
+
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+          <a href={% url "post_list" %}>Inicio</a>
         </div>
+
+        <div class="w3-display-topmiddle">
+          <h1 class="w3-jumbo w3-animate-top display-3" align = "center"><a href = {% url "predicciones" %}>{{dato.Titulo}} </a></h1>
+          <hr class="w3-border-grey" style="margin:auto;width:100%">
 
         <div class ="content container">
           <div class ="row">
             <div class="col-md-8">
               <div class="post">
 
-                <h1><a href = {% url "predicciones" %}>{{dato.Titulo}} </a></h1>
-                <p align="justify">Lluvias acumuladas:{{dato.P_accu}}</p>
-                <p align="justify">Temperatura promedio un mes previo:{{dato.T_avg_prev}}</p>
-                <p align="justify">Radiación acumulada un mes previo:{{dato.Rad_accu_prev1}}</p>
-                <p align="justify">Predicción {{predict}}</p>
+                <p>
+                  <em>Lluvias acumuladas</em>: {{dato.P_accu}} mms<br>
+                  <em>Temperatura promedio un mes previo </em>: {{dato.T_avg_prev}} C<sup>o</sup><br>
+                  <em>Radiación acumulada un mes previo </em>: {{dato.Rad_accu_prev1}}  µmol·m²·s-1<br>
+                  <em><ins>Predicción</ins>: {{predict}} [kg·Ha-1]</em>
+                </p>
 
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="w3-display-bottomleft w3-padding-large">
+        Grupo <a href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio">OPALO</a>
+      </div>
+    </div>
     </body>
 </html>

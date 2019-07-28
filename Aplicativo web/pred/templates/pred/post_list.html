@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="es">
 <head>
   <title>ML-OPALO</title>
   <meta charset="utf-8">
@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio">OPALO</a>
+      <a class="nav-link" href="http://industrial.uis.edu.co/eisi/grupo/opalo/#views/gm1/inicio" data-toggle="tooltip" title="Grupo de investigación">OPALO</a>
     </li>
     </ul>
   </nav>
@@ -37,12 +37,12 @@
         <div class="col-md-4">
         <h3 align = "center">
         <a href = {% url "datos_nuevo"%} class="text-decoration-none">{{Descrip}}</a></h3>
-        <p align = "center">Descripción del cultivo estudiado</p>
+        <p align = "center">Características del cultivo estudiado</p>
     </div>
     <div class="col-md-4">
       <h3 align = "center">
       <a href = {% url "vars_nuevo" %} class="text-decoration-none">{{Vars}}</a></h3>
-      <p align = "center">Características de las variables utilizadas para la construcción del modelo predictivo</p>
+      <p align = "center">Variables utilizadas para la construcción del modelo predictivo</p>
     </div>
     <div class="col-md-4">
       <h3 align = "center">
